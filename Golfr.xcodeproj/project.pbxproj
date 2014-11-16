@@ -15,6 +15,7 @@
 		D4CE3BA01A18F7A00030441E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CE3B9E1A18F7A00030441E /* LaunchScreen.xib */; };
 		D4CE3BAC1A18F7A10030441E /* GolfrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE3BAB1A18F7A10030441E /* GolfrTests.swift */; };
 		D4CE3BB71A1914960030441E /* AddRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE3BB51A1914960030441E /* AddRoundViewController.swift */; };
+		D4CE3BBA1A191B4D0030441E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE3BB91A191B4D0030441E /* Round.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D4CE3BAA1A18F7A10030441E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4CE3BAB1A18F7A10030441E /* GolfrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfrTests.swift; sourceTree = "<group>"; };
 		D4CE3BB51A1914960030441E /* AddRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoundViewController.swift; sourceTree = "<group>"; };
+		D4CE3BB91A191B4D0030441E /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D4CE3B921A18F7A00030441E /* AppDelegate.swift */,
 				D4CE3B971A18F7A00030441E /* HomeController.swift */,
 				D4CE3BB51A1914960030441E /* AddRoundViewController.swift */,
+				D4CE3BB91A191B4D0030441E /* Round.swift */,
 				D4CE3B991A18F7A00030441E /* Main.storyboard */,
 				D4CE3B9C1A18F7A00030441E /* Images.xcassets */,
 				D4CE3B9E1A18F7A00030441E /* LaunchScreen.xib */,
@@ -221,6 +224,7 @@
 				D4CE3B981A18F7A00030441E /* HomeController.swift in Sources */,
 				D4CE3B961A18F7A00030441E /* Golfr.xcdatamodeld in Sources */,
 				D4CE3B931A18F7A00030441E /* AppDelegate.swift in Sources */,
+				D4CE3BBA1A191B4D0030441E /* Round.swift in Sources */,
 				D4CE3BB71A1914960030441E /* AddRoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

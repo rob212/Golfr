@@ -8,11 +8,24 @@
 
 import UIKit
 
-class HomeController: UITableViewController, UITableViewDataSource  {
+class HomeController: UITableViewController  {
+
+    
+    var currentRounds = [Round]();
+    var previousRounds = [Round]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Just some initial dummy data to test the code, this will be removed at a later date
+        previousRounds.append( Round(courseName:"Kingknowe", currentHandicap:nil));
+        var oldRound = Round(courseName: "Ratho", currentHandicap: nil);
+        var oldTime = NSDate();
+        oldTime.dateByAddingTimeInterval(NSTimeInterval(-260000));
+        oldRound.dateOfRound = oldTime;
+        previousRounds.append(oldRound)
+        
     }
 
     override func didReceiveMemoryWarning() {

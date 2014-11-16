@@ -42,12 +42,38 @@
                     <navigationItem key="navigationItem" title="Golfr" id="Sco-wI-X24">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ndg-TW-toX">
                             <color key="tintColor" red="0.21568627450980393" green="0.67843137254901964" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="jLD-fk-Soy" kind="show" id="VGO-5r-rwa"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEe-BV-1ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1551" y="-50"/>
+        </scene>
+        <!--Add Round-->
+        <scene sceneID="LRU-ka-sNI">
+            <objects>
+                <viewController id="jLD-fk-Soy" customClass="AddRoundViewController" customModule="Golfr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rD5-cz-y4a"/>
+                        <viewControllerLayoutGuide type="bottom" id="oug-tV-2oX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="deo-k7-gG2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Round" id="10t-Zv-iE4">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="8SF-BB-W2o"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QPP-ru-s9K"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sIv-pk-F2W"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6v-gX-vxN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="-50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MYI-ju-Kfx">
