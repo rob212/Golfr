@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5V2-re-Tf0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Golfr-->
@@ -43,7 +44,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ndg-TW-toX">
                             <color key="tintColor" red="0.21568627450980393" green="0.67843137254901964" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="jLD-fk-Soy" kind="show" id="VGO-5r-rwa"/>
+                                <segue destination="F6r-VG-b4L" kind="presentation" id="VGO-5r-rwa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,17 +64,83 @@
                     <view key="view" contentMode="scaleToFill" id="deo-k7-gG2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76d-Yi-6vM">
+                                <rect key="frame" x="53" y="139" width="494" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Select course"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBV-fE-KtU">
+                                <rect key="frame" x="53" y="438" width="494" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Start Round!">
+                                    <color key="titleColor" red="0.21568627450980393" green="0.67450980392156867" blue="0.058823529411764705" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yID-9W-d1H">
+                                <rect key="frame" x="130" y="235" width="417" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jLD-fk-Soy" id="1yl-7z-uzm"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Current Handicap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErN-FR-gWb">
+                                <rect key="frame" x="305" y="298" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fOn-i5-HdJ">
+                                <rect key="frame" x="449" y="295" width="98" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZJ-bk-ly8">
+                                <rect key="frame" x="53" y="239" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="76d-Yi-6vM" firstAttribute="leading" secondItem="deo-k7-gG2" secondAttribute="leadingMargin" constant="37" id="09R-JD-nW1"/>
+                            <constraint firstItem="76d-Yi-6vM" firstAttribute="top" secondItem="rD5-cz-y4a" secondAttribute="bottom" constant="75" id="1vM-Xt-wIq"/>
+                            <constraint firstItem="fOn-i5-HdJ" firstAttribute="leading" secondItem="ErN-FR-gWb" secondAttribute="trailing" constant="8" id="7cf-e4-RRh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yID-9W-d1H" secondAttribute="trailing" constant="37" id="9EW-88-M8e"/>
+                            <constraint firstItem="LBV-fE-KtU" firstAttribute="leading" secondItem="deo-k7-gG2" secondAttribute="leadingMargin" constant="37" id="Bbe-S6-VSw"/>
+                            <constraint firstItem="oug-tV-2oX" firstAttribute="top" secondItem="LBV-fE-KtU" secondAttribute="bottom" constant="132" id="GrL-fU-8Ks"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="76d-Yi-6vM" secondAttribute="trailing" constant="37" id="QTs-V3-f9G"/>
+                            <constraint firstItem="fOn-i5-HdJ" firstAttribute="top" secondItem="yID-9W-d1H" secondAttribute="bottom" constant="30" id="Qcx-eU-lTz"/>
+                            <constraint firstItem="ErN-FR-gWb" firstAttribute="top" secondItem="yID-9W-d1H" secondAttribute="bottom" constant="33" id="X35-Xt-PAz"/>
+                            <constraint firstItem="yID-9W-d1H" firstAttribute="leading" secondItem="yZJ-bk-ly8" secondAttribute="trailing" constant="8" id="g1c-X2-Coi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fOn-i5-HdJ" secondAttribute="trailing" constant="37" id="rld-e1-hOR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LBV-fE-KtU" secondAttribute="trailing" constant="37" id="rw2-AY-WZ6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Round" id="10t-Zv-iE4">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="8SF-BB-W2o"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QPP-ru-s9K"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sIv-pk-F2W"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QPP-ru-s9K">
+                            <connections>
+                                <action selector="cancel:" destination="jLD-fk-Soy" id="HNj-Kv-sBv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="sIv-pk-F2W">
+                            <connections>
+                                <action selector="done:" destination="jLD-fk-Soy" id="ogT-V6-e4S"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="courseNameTextField" destination="yID-9W-d1H" id="85O-Pv-dtO"/>
+                        <outlet property="currentHandicapTextField" destination="fOn-i5-HdJ" id="hxW-e2-0dl"/>
+                        <outlet property="doneBarButton" destination="sIv-pk-F2W" id="i7K-CN-8hD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6v-gX-vxN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2330" y="-50"/>
+            <point key="canvasLocation" x="3142" y="-50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MYI-ju-Kfx">
@@ -92,6 +159,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i80-JB-VSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="739" y="-50"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Jm-bl-dVD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F6r-VG-b4L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Qp-XJ-9K6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jLD-fk-Soy" kind="relationship" relationship="rootViewController" id="Iye-sq-X3u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lAv-4M-5eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="-50"/>
         </scene>
     </scenes>
 </document>

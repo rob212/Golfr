@@ -36,8 +36,10 @@ class HomeController: UITableViewController  {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
-            var cell :UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("PreviousRoundItem") as? UITableViewCell;
-            return cell!;
+            var cell = tableView.dequeueReusableCellWithIdentifier("PreviousRoundItem") as UITableViewCell;
+            cell.textLabel!.text = (previousRounds[indexPath.row] as Round).courseName;
+            cell.detailTextLabel!.text = (previousRounds[indexPath.row] as Round).dateOfRound.description;
+            return cell;
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
