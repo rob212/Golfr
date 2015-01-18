@@ -8,8 +8,11 @@
 
 import UIKit
 
-class HomeController: UITableViewController  {
 
+class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
+
+    
+    @IBOutlet var roundsTableView: UITableView!
     
     var currentRounds = [Round]();
     var previousRounds = [Round]();
@@ -37,8 +40,21 @@ class HomeController: UITableViewController  {
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
             var cell = tableView.dequeueReusableCellWithIdentifier("PreviousRoundItem") as UITableViewCell;
-            cell.textLabel!.text = (previousRounds[indexPath.row] as Round).courseName;
-            cell.detailTextLabel!.text = (previousRounds[indexPath.row] as Round).dateOfRound.description;
+            
+            if (indexPath.section==0) {
+                if (!currentRounds.isEmpty)
+                {
+                    cell.textLabel!.text = (currentRounds[indexPath.row] as Round).courseName;
+                    cell.detailTextLabel!.text = (currentRounds[indexPath.row] as Round).dateOfRound.description;
+                }
+            }
+            else {
+                cell.textLabel!.text = (previousRounds[indexPath.row] as Round).courseName;
+                cell.detailTextLabel!.text = (previousRounds[indexPath.row] as Round).dateOfRound.description;
+            }
+            
+            
+            
             return cell;
     }
     
@@ -49,7 +65,7 @@ class HomeController: UITableViewController  {
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             if (section == 0){
-                return 1;
+                return currentRounds.count;
             } else {
                 return 2;
             }
@@ -63,5 +79,24 @@ class HomeController: UITableViewController  {
                 return "Previous Rounds";
             }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "addRoundSegue"{
+            let navigationController = segue.destinationViewController as UINavigationController
+            
+            let vc = navigationController.viewControllers[0] as AddRoundViewController
+            vc.roundDelegate = self
+        }
+    }
+    
+    func AddRoundViewControllerDidAdd(controller: AddRoundViewController,round: Round)
+    {
+        self.currentRounds.append(round);
+        self.roundsTableView.reloadSections(NSIndexSet(index:0), withRowAnimation: UITableViewRowAnimation.None)
+       self.dismissViewControllerAnimated(true, nil)
+        
+    }
+    
+
 }
 

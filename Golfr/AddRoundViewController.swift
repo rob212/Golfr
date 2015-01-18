@@ -9,17 +9,18 @@
 import UIKit
 
 protocol AddRoundViewControllerDelegate {
-    func AddRoundViewControllerDidCancel(controller: AddRoundViewController);
     func AddRoundViewControllerDidAdd(controller: AddRoundViewController,round: Round);
 }
 
-class AddRoundViewController: UIViewController {
+class AddRoundViewController: UIViewController, SelectCourseViewControllerDelegate {
     
 
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var currentHandicapTextField: UITextField!
     
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    var roundDelegate: AddRoundViewControllerDelegate? = nil
+//    var selectCourseDelegate: SelectCourseViewControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +58,38 @@ class AddRoundViewController: UIViewController {
 
     @IBAction func done(sender: AnyObject) {
         println("You entered the courseName as :\(courseNameTextField.text)");
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
+        if (courseNameTextField != nil && !courseNameTextField.text.isEmpty)
+        {
+            let round = Round(courseName: courseNameTextField.text, currentHandicap: currentHandicapTextField.text.toInt());
+        
+//        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
+            if (roundDelegate != nil)
+            {
+                roundDelegate!.AddRoundViewControllerDidAdd(self, round: round);
+          
+            }
+        }
     }
-    
-    
+
     @IBAction func cancel(sender: AnyObject) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
     }
+    
+    
+    
+    func SelectRoundViewControllerDidSelectCourse(controller: SelectCourseTableViewController,golfCourse: GolfCourse){
+        println("in Add round controller SelectRoundViewControllerDidSelectCourse has been called")
+        self.courseNameTextField.text = golfCourse.courseName;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "selectCourseSegue"{
+            println("In add round preparing for segue to Select course")
+            let navigationController = segue.destinationViewController as UINavigationController
+            
+            let vc = navigationController.viewControllers[0] as SelectCourseTableViewController
+            vc.delegate = self
+        }
+    }
+
 }
