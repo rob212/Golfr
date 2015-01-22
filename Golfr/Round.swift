@@ -13,7 +13,7 @@ class Round: NSObject {
     var courseName : String;
     var currentHandicap : Int;
     var dateOfRound : NSDate;
-//    var score : [Int];
+    var score : Int = 0;
     
     init(courseName:String, currentHandicap:Int?){
         self.courseName = courseName;
