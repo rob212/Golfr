@@ -34,6 +34,7 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CourseNameField.delegate = self;
     
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -115,6 +116,10 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
         golfCourse.coursePars[cell.holeIndex] = cellParValue!;
     }
     
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.view.endEditing(true);
+        return false;
+    }
 
     /*
     // Override to support conditional editing of the table view.

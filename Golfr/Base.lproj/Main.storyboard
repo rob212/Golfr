@@ -330,7 +330,8 @@
                                                             <exclude reference="upb-8s-PEp"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="152" y="14" width="16" height="22"/>
                                                         <mask key="constraints">
                                                             <include reference="upb-8s-PEp"/>
                                                         </mask>
@@ -344,6 +345,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="213" y="15" width="2" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-0f-ZmH">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -356,7 +360,8 @@
                                                             <exclude reference="XZk-at-G26"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="253" y="14" width="16" height="22"/>
                                                         <mask key="constraints">
                                                             <include reference="XZk-at-G26"/>
                                                         </mask>
@@ -386,14 +391,14 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="iqE-EH-mcC"/>
-                                                    <exclude reference="3GT-V2-gWs"/>
-                                                    <exclude reference="WMx-xc-m8Q"/>
-                                                    <exclude reference="nLU-gi-aTk"/>
                                                     <exclude reference="9eV-kI-9E3"/>
                                                     <exclude reference="OdB-fG-Yjt"/>
                                                     <exclude reference="hfr-XG-gyX"/>
                                                     <exclude reference="gcW-ye-BlO"/>
                                                     <exclude reference="hrX-zf-BXo"/>
+                                                    <exclude reference="3GT-V2-gWs"/>
+                                                    <exclude reference="WMx-xc-m8Q"/>
+                                                    <exclude reference="nLU-gi-aTk"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -405,14 +410,14 @@
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="iqE-EH-mcC"/>
-                                                    <include reference="3GT-V2-gWs"/>
-                                                    <include reference="WMx-xc-m8Q"/>
-                                                    <include reference="nLU-gi-aTk"/>
                                                     <include reference="9eV-kI-9E3"/>
                                                     <include reference="OdB-fG-Yjt"/>
                                                     <include reference="hfr-XG-gyX"/>
                                                     <include reference="gcW-ye-BlO"/>
                                                     <include reference="hrX-zf-BXo"/>
+                                                    <include reference="3GT-V2-gWs"/>
+                                                    <include reference="WMx-xc-m8Q"/>
+                                                    <include reference="nLU-gi-aTk"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -427,13 +432,13 @@
                                     <outlet property="delegate" destination="iPL-W4-bqg" id="QTO-P5-taL"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qdp-ds-UB4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qdp-ds-UB4">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qdp-ds-UB4" secondAttribute="height" multiplier="293:30" id="NFV-pA-D7d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="NFV-pA-D7d"/>
@@ -483,13 +488,6 @@
                                 <exclude reference="Qdp-ds-UB4"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4aY-9C-DWQ"/>
-                                <exclude reference="AXQ-Ba-sHA"/>
-                                <exclude reference="ix0-38-AWx"/>
-                                <exclude reference="k2h-GF-Lul"/>
-                                <exclude reference="7LL-Oc-pAc"/>
-                                <exclude reference="fZV-nz-AC4"/>
-                                <exclude reference="tac-yF-zwG"/>
                                 <exclude reference="MUU-gI-LbE"/>
                                 <exclude reference="PcE-pJ-a0M"/>
                                 <exclude reference="U2f-1J-zib"/>
@@ -500,6 +498,13 @@
                                 <exclude reference="moK-yz-DMA"/>
                                 <exclude reference="tPc-M6-ASR"/>
                                 <exclude reference="vvF-OP-hIB"/>
+                                <exclude reference="7LL-Oc-pAc"/>
+                                <exclude reference="fZV-nz-AC4"/>
+                                <exclude reference="tac-yF-zwG"/>
+                                <exclude reference="4aY-9C-DWQ"/>
+                                <exclude reference="AXQ-Ba-sHA"/>
+                                <exclude reference="ix0-38-AWx"/>
+                                <exclude reference="k2h-GF-Lul"/>
                                 <exclude reference="B0d-YP-rHv"/>
                                 <exclude reference="EFx-lU-pz3"/>
                                 <exclude reference="JBa-k0-gaH"/>
@@ -516,13 +521,6 @@
                                 <include reference="Qdp-ds-UB4"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4aY-9C-DWQ"/>
-                                <include reference="AXQ-Ba-sHA"/>
-                                <include reference="ix0-38-AWx"/>
-                                <exclude reference="k2h-GF-Lul"/>
-                                <include reference="7LL-Oc-pAc"/>
-                                <exclude reference="fZV-nz-AC4"/>
-                                <include reference="tac-yF-zwG"/>
                                 <include reference="MUU-gI-LbE"/>
                                 <exclude reference="PcE-pJ-a0M"/>
                                 <exclude reference="U2f-1J-zib"/>
@@ -533,6 +531,13 @@
                                 <exclude reference="moK-yz-DMA"/>
                                 <include reference="tPc-M6-ASR"/>
                                 <exclude reference="vvF-OP-hIB"/>
+                                <include reference="7LL-Oc-pAc"/>
+                                <exclude reference="fZV-nz-AC4"/>
+                                <include reference="tac-yF-zwG"/>
+                                <include reference="4aY-9C-DWQ"/>
+                                <include reference="AXQ-Ba-sHA"/>
+                                <include reference="ix0-38-AWx"/>
+                                <exclude reference="k2h-GF-Lul"/>
                                 <include reference="B0d-YP-rHv"/>
                                 <include reference="EFx-lU-pz3"/>
                                 <include reference="JBa-k0-gaH"/>
