@@ -65,6 +65,7 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        println("In select course about to segue to add course");
         if segue.identifier == "addCourseSegue"{
             let navigationController = segue.destinationViewController as UINavigationController
             let vc = navigationController.viewControllers[0] as AddCourseViewController
