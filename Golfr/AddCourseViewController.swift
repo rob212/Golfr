@@ -27,20 +27,31 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var DoneButton: UIBarButtonItem!
     
-    var golfCourse: GolfCourse = GolfCourse(courseName: "", isNineHoleCourse: false);
+//    var golfCourse: GolfCourse = GolfCourse(courseName: "", isNineHoleCourse: false);
+    var golfCourse: GolfCourse?;
     var delegate: AddCourseViewControllerDelegate? = nil
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CourseNameField.delegate = self;
+        if (self.golfCourse != nil){
+            CourseNameField.text = golfCourse!.courseName;
+            self.parScores = golfCourse!.coursePars;
+        } else {
+            golfCourse = GolfCourse(courseName: "", isNineHoleCourse: false);
+        }
     
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false);
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,9 +86,13 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.holeNumber.text = "Hole "+String(indexPath.row+1);
 //        println("cell: \(cell.holeNumber.text) par score is \(golfCourse.coursePars[indexPath.row])")
-        cell.parScore.text = String(golfCourse.coursePars[indexPath.row])
+        if let tempCourse = golfCourse {
+            cell.parScore.text = String(tempCourse.coursePars[indexPath.row])
+        } else {
+            cell.parScore.text = "4";
+        }
         cell.holeIndex = indexPath.row;
-        return cell;
+                return cell;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -98,8 +113,11 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
         println("done buton pressed on add course")
         if (delegate != nil)
         {
-            golfCourse.courseName = CourseNameField.text;
-            delegate!.AddCourseViewControllerDidAdd(self, golfCourse: golfCourse);
+             if let tempCourse = self.golfCourse {
+                tempCourse.courseName = CourseNameField.text;
+                delegate!.AddCourseViewControllerDidAdd(self, golfCourse: golfCourse!);
+            }
+            
         }
     }
     
@@ -113,7 +131,9 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
     /* Delegate for HoleParCellTableViewCell */
     func HoleParCellTableViewCellDidChange(cell: HoleParCellTableViewCell) {
         let cellParValue = cell.parScore.text?.toInt();
-        golfCourse.coursePars[cell.holeIndex] = cellParValue!;
+        if let tempCourse = golfCourse {
+             tempCourse.coursePars[cell.holeIndex] = cellParValue!;
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {

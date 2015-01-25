@@ -94,7 +94,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Select course"/>
                                 <connections>
-                                    <segue destination="gQW-LB-3xX" kind="show" identifier="selectCourseSegue" id="dp6-Sk-IZN"/>
+                                    <segue destination="gQW-LB-3xX" kind="showDetail" identifier="selectCourseSegue" id="dp6-Sk-IZN"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yID-9W-d1H">
@@ -195,6 +195,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Course" id="t9e-We-IvO">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="fhy-t6-UGd">
+                            <color key="tintColor" red="0.18823529410000001" green="0.62745098040000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelCourseSelection:" destination="phf-M9-7Lk" id="9zn-vg-Zz0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4xM-O7-qh8">
                             <color key="tintColor" red="0.2156862745" green="0.67450980390000004" blue="0.058823529409999999" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
@@ -512,7 +518,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Lu-5S-8fl">
                     <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="3D3BB47B-DADA-42D7-AB1B-E0544A22E24F"/>
+                    <state key="normal" image="5035E0B9-B8C9-4856-8F89-E97B713465CF"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="333" y="14" width="16" height="22"/>
                     </variation>
@@ -522,7 +528,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3D3BB47B-DADA-42D7-AB1B-E0544A22E24F" width="16" height="16">
+        <image name="5035E0B9-B8C9-4856-8F89-E97B713465CF" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

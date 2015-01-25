@@ -66,10 +66,17 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         println("In select course about to segue to add course");
+        var selectedCourse : GolfCourse?;
+        if sender is GolfCourse {
+             selectedCourse = sender as? GolfCourse;
+        }
         if segue.identifier == "addCourseSegue"{
             let navigationController = segue.destinationViewController as UINavigationController
             let vc = navigationController.viewControllers[0] as AddCourseViewController
             vc.delegate = self
+            if (selectedCourse != nil){
+                vc.golfCourse = selectedCourse;
+            }
         }
     }
 
@@ -82,6 +89,10 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
         
     }
     
+    
+    @IBAction func cancelCourseSelection(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
     
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -107,7 +118,7 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
         if (delegate != nil)
         {
             delegate!.SelectRoundViewControllerDidSelectCourse(self, golfCourse: selectedCourse);
-//            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
         }
 
     }
@@ -115,7 +126,7 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
         var moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Edit", handler:{action, indexpath in
-            self.performSegueWithIdentifier("editCourseSegue", sender: self.courses[indexPath.row]);
+            self.performSegueWithIdentifier("addCourseSegue", sender: self.courses[indexPath.row]);
         });
         moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
         
@@ -125,6 +136,8 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
         
         return [deleteRowAction, moreRowAction];
     }
+    
+   
 
     
     
