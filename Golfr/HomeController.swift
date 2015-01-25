@@ -22,8 +22,8 @@ class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Just some initial dummy data to test the code, this will be removed at a later date
-        previousRounds.append( Round(courseName:"Kingknowe", currentHandicap:nil));
-        var oldRound = Round(courseName: "Ratho", currentHandicap: nil);
+        previousRounds.append( Round(courseName:"Kingknowe", currentHandicap:nil, score: 84));
+        var oldRound = Round(courseName: "Ratho", currentHandicap: nil, score: 76);
         var oldTime = NSDate();
         oldTime.dateByAddingTimeInterval(NSTimeInterval(-260000));
         oldRound.dateOfRound = oldTime;
@@ -39,18 +39,21 @@ class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             
-            var cell = tableView.dequeueReusableCellWithIdentifier("PreviousRoundItem") as UITableViewCell;
+            var cell = tableView.dequeueReusableCellWithIdentifier("previousRoundCell") as PreviousRoundTableViewCell;
             
             if (indexPath.section==0) {
                 if (!currentRounds.isEmpty)
                 {
-                    cell.textLabel!.text = (currentRounds[indexPath.row] as Round).courseName;
-                    cell.detailTextLabel!.text = (currentRounds[indexPath.row] as Round).dateOfRound.description;
+                    cell.courseName.text = (currentRounds[indexPath.row] as Round).courseName;
+                    cell.playedDate.text = (currentRounds[indexPath.row] as Round).dateOfRound.description;
+                    cell.Score.text = String((currentRounds[indexPath.row] as Round).score);
                 }
             }
             else {
-                cell.textLabel!.text = (previousRounds[indexPath.row] as Round).courseName;
-                cell.detailTextLabel!.text = (previousRounds[indexPath.row] as Round).dateOfRound.description;
+                cell.courseName.text = (previousRounds[indexPath.row] as Round).courseName;
+                cell.playedDate.text = (previousRounds[indexPath.row] as Round).dateOfRound.description;
+                cell.Score.text = String((previousRounds[indexPath.row] as Round).score);
+
             }
             
             

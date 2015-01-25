@@ -60,7 +60,7 @@ class AddRoundViewController: UIViewController, SelectCourseViewControllerDelega
         println("You entered the courseName as :\(courseNameTextField.text)");
         if (courseNameTextField != nil && !courseNameTextField.text.isEmpty)
         {
-            let round = Round(courseName: courseNameTextField.text, currentHandicap: currentHandicapTextField.text.toInt());
+            let round = Round(courseName: courseNameTextField.text, currentHandicap: currentHandicapTextField.text.toInt(), score: 0);
         
 //        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
             if (roundDelegate != nil)
