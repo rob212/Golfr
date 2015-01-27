@@ -75,6 +75,7 @@ class SelectCourseTableViewController: UITableViewController, UITableViewDelegat
             let vc = navigationController.viewControllers[0] as AddCourseViewController
             vc.delegate = self
             if (selectedCourse != nil){
+                println("selectedCOurse isNineHole :+\(selectedCourse!.isNineHoleCourse)")
                 vc.golfCourse = selectedCourse;
             }
         }

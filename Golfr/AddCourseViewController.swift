@@ -36,8 +36,13 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         CourseNameField.delegate = self;
         if (self.golfCourse != nil){
-            CourseNameField.text = golfCourse!.courseName;
-            self.parScores = golfCourse!.coursePars;
+            let course = golfCourse!
+            CourseNameField.text = course.courseName;
+            self.parScores = course.coursePars;
+            println("is nine hole course : \(course.isNineHoleCourse)")
+            if (course.isNineHoleCourse) {
+                // #TODO TODO select the 9 hole segment of the selector
+            }
         } else {
             golfCourse = GolfCourse(courseName: "", isNineHoleCourse: false);
         }
@@ -115,7 +120,13 @@ class AddCourseViewController: UIViewController, UITableViewDelegate, UITableVie
         {
              if let tempCourse = self.golfCourse {
                 tempCourse.courseName = CourseNameField.text;
-                delegate!.AddCourseViewControllerDidAdd(self, golfCourse: golfCourse!);
+                if ( courseLengthSegmentControl.isEnabledForSegmentAtIndex(0)) {
+                    tempCourse.isNineHoleCourse = true;
+                } else {
+                    tempCourse.isNineHoleCourse = false;
+                }
+                  println("Done button added to add course the isnineHolevalue is: \(tempCourse.isNineHoleCourse)")
+                delegate!.AddCourseViewControllerDidAdd(self, golfCourse: tempCourse);
             }
             
         }
