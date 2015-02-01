@@ -10,16 +10,16 @@ import UIKit
 
 class Round: NSObject {
     
-    var courseName : String;
-    var currentHandicap : Int;
-    var dateOfRound : NSDate;
-    var score : Int;
+    var golfCourse : GolfCourse
+    var currentHandicap : Int
+    var dateOfRound : NSDate
+    var score : Int
     
-    init(courseName:String, currentHandicap:Int?, score:Int){
-        self.courseName = courseName;
-        self.currentHandicap = 10;
-        self.dateOfRound = NSDate();
-        self.score = score;
+    init(course:GolfCourse, currentHandicap:Int?, score:Int){
+        self.golfCourse = course
+        self.currentHandicap = 10
+        self.dateOfRound = NSDate()
+        self.score = score
     }
    
 }

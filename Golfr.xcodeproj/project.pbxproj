@@ -12,6 +12,7 @@
 		D41B02F01A4DF1A7006D4D25 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41B02EF1A4DF1A7006D4D25 /* AddCourseViewController.swift */; };
 		D42CA2441A71A0DA007F9CE2 /* PreviousRoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42CA2431A71A0DA007F9CE2 /* PreviousRoundTableViewCell.swift */; };
 		D44C8B481A48889C004C2309 /* GolfCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C8B471A48889C004C2309 /* GolfCourse.swift */; };
+		D498B4701A7E7F6900723E64 /* CurrentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498B46F1A7E7F6900723E64 /* CurrentGameViewController.swift */; };
 		D4CE3B931A18F7A00030441E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE3B921A18F7A00030441E /* AppDelegate.swift */; };
 		D4CE3B961A18F7A00030441E /* Golfr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4CE3B941A18F7A00030441E /* Golfr.xcdatamodeld */; };
 		D4CE3B981A18F7A00030441E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE3B971A18F7A00030441E /* HomeController.swift */; };
@@ -39,6 +40,7 @@
 		D41B02EF1A4DF1A7006D4D25 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		D42CA2431A71A0DA007F9CE2 /* PreviousRoundTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousRoundTableViewCell.swift; sourceTree = "<group>"; };
 		D44C8B471A48889C004C2309 /* GolfCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolfCourse.swift; sourceTree = "<group>"; };
+		D498B46F1A7E7F6900723E64 /* CurrentGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentGameViewController.swift; sourceTree = "<group>"; };
 		D4CE3B8D1A18F79F0030441E /* Golfr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Golfr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CE3B911A18F7A00030441E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4CE3B921A18F7A00030441E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				D4CE3BB51A1914960030441E /* AddRoundViewController.swift */,
 				D41B02ED1A4DE5F4006D4D25 /* SelectCourseTableViewController.swift */,
 				D41B02EF1A4DF1A7006D4D25 /* AddCourseViewController.swift */,
+				D498B46F1A7E7F6900723E64 /* CurrentGameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				D4198AC61A5094A9004E3F53 /* HoleParCellTableViewCell.swift in Sources */,
 				D4CE3B981A18F7A00030441E /* HomeController.swift in Sources */,
 				D4CE3B961A18F7A00030441E /* Golfr.xcdatamodeld in Sources */,
+				D498B4701A7E7F6900723E64 /* CurrentGameViewController.swift in Sources */,
 				D4CE3B931A18F7A00030441E /* AppDelegate.swift in Sources */,
 				D4CE3BBA1A191B4D0030441E /* Round.swift in Sources */,
 				D42CA2441A71A0DA007F9CE2 /* PreviousRoundTableViewCell.swift in Sources */,

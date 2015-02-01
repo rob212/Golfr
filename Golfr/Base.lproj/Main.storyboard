@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5V2-re-Tf0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5V2-re-Tf0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,19 +20,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="peH-2y-9fK" id="DcH-yp-xwN">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-3f-6VA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo5-3f-6VA">
                                             <rect key="frame" x="8" y="8" width="116" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eft-rX-3JR">
-                                            <rect key="frame" x="466" y="24" width="49.5" height="23"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eft-rX-3JR">
+                                            <rect key="frame" x="466" y="25" width="50" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="playedDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-zw-tY1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="playedDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-zw-tY1">
                                             <rect key="frame" x="8" y="39" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -53,6 +53,7 @@
                                     <outlet property="Score" destination="eft-rX-3JR" id="3N8-gi-EYX"/>
                                     <outlet property="courseName" destination="eo5-3f-6VA" id="RXx-TS-wgR"/>
                                     <outlet property="playedDate" destination="WEb-zw-tY1" id="GDM-Tk-9nC"/>
+                                    <segue destination="bfI-zP-NqN" kind="show" identifier="currentGameSegue" id="xEt-om-3Uh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -235,6 +236,25 @@
             </objects>
             <point key="canvasLocation" x="739" y="-50"/>
         </scene>
+        <!--Current Game-->
+        <scene sceneID="tVD-0b-67N">
+            <objects>
+                <viewController id="LWJ-uR-vQG" customClass="CurrentGameViewController" customModule="Golfr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dS0-Eg-xOh"/>
+                        <viewControllerLayoutGuide type="bottom" id="n13-1A-AJt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pYz-jw-kr0">
+                        <rect key="frame" x="0.0" y="-1" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Current Game" id="idp-wv-Vqz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPG-fy-8JU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3142" y="-734"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Jm-bl-dVD">
             <objects>
@@ -336,12 +356,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JQN-rr-eqg" id="hLe-0R-gz8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzQ-PQ-MGv">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzQ-PQ-MGv">
                                                     <rect key="frame" x="397" y="15" width="16" height="22"/>
                                                     <state key="normal" image="Minus"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="192" y="14" width="16" height="22"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="minusParButton:" destination="JQN-rr-eqg" eventType="touchUpInside" id="nfc-5R-ANk"/>
                                                     </connections>
@@ -359,25 +376,19 @@
                                                             <exclude reference="YKi-ys-7lJ"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="253" y="15" width="42" height="20.5"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hole" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igh-WW-xaQ">
                                                     <rect key="frame" x="8" y="14" width="36" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="8" y="14" width="108" height="22.5"/>
                                                     </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyF-Up-3ss">
                                                     <rect key="frame" x="523" y="15" width="16" height="22"/>
                                                     <state key="normal" image="Plus"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="192" y="14" width="16" height="22"/>
-                                                    </variation>
                                                     <connections>
                                                         <action selector="plusParButton:" destination="JQN-rr-eqg" eventType="touchUpInside" id="GXC-4a-VlF"/>
                                                     </connections>
@@ -498,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuS-fT-24C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6738" y="-492"/>
+            <point key="canvasLocation" x="7550" y="-492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="El3-0j-rZL">
@@ -518,17 +529,35 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Lu-5S-8fl">
                     <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="5035E0B9-B8C9-4856-8F89-E97B713465CF"/>
+                    <state key="normal" image="DDFA74A8-FC03-40FB-A1C5-44B1D3ADB13A"/>
                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="333" y="14" width="16" height="22"/>
                     </variation>
                 </button>
             </objects>
-            <point key="canvasLocation" x="5953.5" y="-494.25"/>
+            <point key="canvasLocation" x="6765" y="-495"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yPy-H5-Kpe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bfI-zP-NqN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YqV-fu-ZZX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LWJ-uR-vQG" kind="relationship" relationship="rootViewController" id="pyB-Xn-vLs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0N-D4-IAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="-734"/>
         </scene>
     </scenes>
     <resources>
-        <image name="5035E0B9-B8C9-4856-8F89-E97B713465CF" width="16" height="16">
+        <image name="DDFA74A8-FC03-40FB-A1C5-44B1D3ADB13A" width="16" height="16">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

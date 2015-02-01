@@ -14,13 +14,13 @@ protocol AddRoundViewControllerDelegate {
 
 class AddRoundViewController: UIViewController, SelectCourseViewControllerDelegate {
     
+    var golfCourse : GolfCourse?
 
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var currentHandicapTextField: UITextField!
     
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     var roundDelegate: AddRoundViewControllerDelegate? = nil
-//    var selectCourseDelegate: SelectCourseViewControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class AddRoundViewController: UIViewController, SelectCourseViewControllerDelega
         println("You entered the courseName as :\(courseNameTextField.text)");
         if (courseNameTextField != nil && !courseNameTextField.text.isEmpty)
         {
-            let round = Round(courseName: courseNameTextField.text, currentHandicap: currentHandicapTextField.text.toInt(), score: 0);
+            let round = Round(course: self.golfCourse!, currentHandicap: currentHandicapTextField.text.toInt(), score: 0);
         
 //        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
             if (roundDelegate != nil)
@@ -79,7 +79,8 @@ class AddRoundViewController: UIViewController, SelectCourseViewControllerDelega
     
     func SelectRoundViewControllerDidSelectCourse(controller: SelectCourseTableViewController,golfCourse: GolfCourse){
         println("in Add round controller SelectRoundViewControllerDidSelectCourse has been called")
-        self.courseNameTextField.text = golfCourse.courseName;
+        self.courseNameTextField.text = golfCourse.courseName
+        self.golfCourse = golfCourse
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

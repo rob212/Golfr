@@ -9,7 +9,7 @@
 import UIKit
 
 
-class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
+class HomeController: UITableViewController, AddRoundViewControllerDelegate, CurrentGameViewControllerDelegate  {
 
     
     @IBOutlet var roundsTableView: UITableView!
@@ -22,8 +22,10 @@ class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Just some initial dummy data to test the code, this will be removed at a later date
-        previousRounds.append( Round(courseName:"Kingknowe", currentHandicap:nil, score: 84));
-        var oldRound = Round(courseName: "Ratho", currentHandicap: nil, score: 76);
+        let course1 = GolfCourse(courseName: "Kingsknowe", isNineHoleCourse: false)
+        let course2 = GolfCourse(courseName: "Ratho", isNineHoleCourse: false)
+        previousRounds.append( Round(course:course1, currentHandicap:nil, score: 84));
+        var oldRound = Round(course: course2, currentHandicap: nil, score: 76);
         var oldTime = NSDate();
         oldTime.dateByAddingTimeInterval(NSTimeInterval(-260000));
         oldRound.dateOfRound = oldTime;
@@ -44,13 +46,13 @@ class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
             if (indexPath.section==0) {
                 if (!currentRounds.isEmpty)
                 {
-                    cell.courseName.text = (currentRounds[indexPath.row] as Round).courseName;
+                    cell.courseName.text = (currentRounds[indexPath.row] as Round).golfCourse.courseName
                     cell.playedDate.text = (currentRounds[indexPath.row] as Round).dateOfRound.description;
                     cell.Score.text = String((currentRounds[indexPath.row] as Round).score);
                 }
             }
             else {
-                cell.courseName.text = (previousRounds[indexPath.row] as Round).courseName;
+                cell.courseName.text = (previousRounds[indexPath.row] as Round).golfCourse.courseName;
                 cell.playedDate.text = (previousRounds[indexPath.row] as Round).dateOfRound.description;
                 cell.Score.text = String((previousRounds[indexPath.row] as Round).score);
 
@@ -83,12 +85,35 @@ class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
             }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var selectedRound:Round = currentRounds[indexPath.row];
+        println("selected \(selectedRound.golfCourse.courseName)")
+//        if (delegate != nil)
+//        {
+//            delegate!.SelectRoundViewControllerDidSelectCourse(self, golfCourse: selectedCourse);
+//            
+//        }
+//        self.CurrentGameViewControllerSelectedCurrentRound(self, round: selectedRound)
+        
+    }
+
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "addRoundSegue"{
             let navigationController = segue.destinationViewController as UINavigationController
             
             let vc = navigationController.viewControllers[0] as AddRoundViewController
             vc.roundDelegate = self
+        }
+        else {
+            if segue.identifier == "currentGameSegue" {
+                println("preparing for currentGameSegue")
+                let navigationController = segue.destinationViewController as UINavigationController
+                let vc = navigationController.viewControllers[0] as CurrentGameViewController
+                vc.currentGameDelegate = self
+                vc.currentRound = self.currentRounds[0]
+            }
         }
     }
     
@@ -100,6 +125,10 @@ class HomeController: UITableViewController, AddRoundViewControllerDelegate  {
         
     }
     
+    // MARK CurrenGameViewControllerDelegate
+    func CurrentGameViewControllerSelectedCurrentRound(controller: CurrentGameViewController,round: Round){
+        println("the current game controller delegate method in Home Controller has been hit.")
+    }
 
 }
 
